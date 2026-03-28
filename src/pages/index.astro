@@ -4,16 +4,18 @@ import { getCollection } from 'astro:content';
 
 const posts = await getCollection('posts');
 posts.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+
+const baseUrl = import.meta.env.BASE_URL;
 ---
 
 <BaseLayout title="我的旅行博客" description="记录旅途中的美好时光">
   <header class="hero">
     <nav class="nav">
-      <a href="/" class="nav-brand">🌍 旅行日记</a>
+      <a href={`${baseUrl}`} class="nav-brand">🌍 旅行日记</a>
       <div class="nav-links">
-        <a href="/">首页</a>
-        <a href="/posts">文章</a>
-        <a href="/about">关于</a>
+        <a href={`${baseUrl}`}>首页</a>
+        <a href={`${baseUrl}posts`}>文章</a>
+        <a href={`${baseUrl}about`}>关于</a>
       </div>
     </nav>
 
@@ -29,7 +31,7 @@ posts.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
       <div class="post-grid">
         {posts.map(post => (
           <article class="post-card">
-            <a href={`/posts/${post.slug}`} class="post-card-link">
+            <a href={`${baseUrl}posts/${post.slug}`} class="post-card-link">
               <div class="post-card-content">
                 <h3 class="post-card-title">{post.data.title}</h3>
                 <p class="post-card-description">{post.data.description}</p>
