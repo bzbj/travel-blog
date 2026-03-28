@@ -1,0 +1,126 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="关于" description="关于这个博客">
+  <header class="site-header">
+    <nav class="nav">
+      <a href="/" class="nav-brand">🌍 旅行日记</a>
+      <div class="nav-links">
+        <a href="/">首页</a>
+        <a href="/posts">文章</a>
+        <a href="/about">关于</a>
+      </div>
+    </nav>
+  </header>
+
+  <main class="main">
+    <div class="about-card">
+      <h1>关于这个博客</h1>
+      <p>这是我的个人旅行博客，记录我在世界各地的经历和感悟。</p>
+      <p>喜欢用脚步丈量世界，用文字和照片记录旅途中的美好时光。</p>
+
+      <h2>联系方式</h2>
+      <ul>
+        <li>📧 Email: your.email@example.com</li>
+        <li>📷 Instagram: @yourhandle</li>
+        <li>🐦 Twitter: @yourhandle</li>
+      </ul>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <p>© 2026 我的旅行博客 · 用 ❤️ 记录旅途</p>
+  </footer>
+</BaseLayout>
+
+<style>
+  .site-header {
+    background: white;
+    border-bottom: 1px solid var(--color-border);
+    padding: 1rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+
+  .nav {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .nav-brand {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--color-text);
+    text-decoration: none;
+  }
+
+  .nav-brand:hover {
+    color: var(--color-accent);
+    text-decoration: none;
+  }
+
+  .nav-links a {
+    margin-left: 1.5rem;
+    color: var(--color-text-light);
+    font-size: 0.95rem;
+  }
+
+  .nav-links a:hover {
+    color: var(--color-accent);
+  }
+
+  .main {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 3rem 1.5rem;
+  }
+
+  .about-card {
+    background: white;
+    padding: 3rem;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  }
+
+  .about-card h1 {
+    margin-top: 0;
+  }
+
+  .about-card ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  .about-card li {
+    margin: 0.75rem 0;
+  }
+
+  .site-footer {
+    text-align: center;
+    padding: 3rem 1.5rem;
+    color: var(--color-text-light);
+    font-size: 0.9rem;
+    border-top: 1px solid var(--color-border);
+  }
+
+  @media (max-width: 640px) {
+    .about-card {
+      padding: 1.5rem;
+    }
+
+    .nav {
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .nav-links a {
+      margin: 0 0.75rem;
+    }
+  }
+</style>
